@@ -143,4 +143,14 @@ function test() {
     console.log('six');
 }
 test(); // ?
+    invoke test () will create function execution context which log fisrt log 'one' 
+    line 131-136 wait 1 second to create function execution context
+    line 137-142 wait 1 second too
+    log 'six'
+    invoke line 137 function and log 'four' and wait 1 second to log 'five'
+    invoke line 131 function and log 'two' then invoke inner function and log 'three'
+    invoke line 139 function and log five
+
+
+
 */
