@@ -1,5 +1,5 @@
-// Name:
-// Class:
+// Name: Baraa Kolly
+// Class: 27
 
 // JavaScript1
 
@@ -13,6 +13,16 @@
     Expected output:
     'Noer is 28 and works as an Education Director'
 */
+function logObj (person) {
+    let personName , personAge , personJob;
+    for (const key in person) {
+            if(key === 'name') personName = person['name'];
+            else if (key === 'age') personAge = person['age'];
+            else personJob = person['job'];
+    }
+    let outputStr = `${personName} is ${personAge} and works as an ${personJob}!`;
+    console.log(outputStr);
+}
 
 /* 2. Create a function, named logNumbers, that:
       - Takes 2 arguments: a start number and an end number
@@ -38,6 +48,14 @@
 
       Use the following values: 1 (start number) and 100 (end number)
 */
+    function logNumbers (startNumber , endNumber) {
+        for ( let i = startNumber ; i<=endNumber ; i++) {
+            if (i % 3 === 0 && i % 5 === 0) console.log('“FizzBuzz”');
+            else if (i % 3 === 0) console.log('“Fizz”');
+            else if (i % 5 === 0) console.log ('“Buzz”');
+            else console.log(i);
+        }
+    }
 
 // JavaScript2
 
@@ -54,6 +72,16 @@
 
       Use the following array: const letters = ['a', 'b', 'c', 'd'];
 */
+    function toNumbers(StringArr) {
+        let numbersArr =[];
+        StringArr.map(item => {
+            numbersArr.push(StringArr.indexOf(item)); // +1 if you want the output as expected [1, 2, 3, 4]
+        })
+        console.log(numbersArr);
+        return numbersArr;
+    }
+
+
 
 /* 4. Create a function, called injectBooksToDOM, that:
       - Takes 1 argument: an array of objects
@@ -79,6 +107,18 @@
             }
       ];
 */
+      const div = document.getElementById('#root');
+      let list = document.createElement('ul');
+      div.appendChild(list);
+
+      function injectBooksToDOM (books) {
+          books.forEach(book => {
+              const listItem = document.createElement('li');
+              listItem.innerHTML = book;
+              list.appendChild(listItem);
+          });
+
+      }
 
 /*
 5. What's the output for this snippet? Is the output deterministic (always the same) or might it depend on the browser
